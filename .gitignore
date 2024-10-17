@@ -185,3 +185,4 @@ checkpoints/
 **/wandb/
 *.out
 /data/
+/featurizer_results/
