@@ -288,7 +288,7 @@ class PropertyTrainer(BaseTrainer):
                     batch_t = batch[self.model[0].target_attr].cpu().numpy()
                         
             # Node level prediction 
-            if batch_p[0].shape[0] > loader.batch_size: 
+            if batch_p[0].shape[0] > loader.batch_size or node_level: 
                 node_level = True
                 node_ids = batch.z.cpu().numpy()
                 structure_ids = np.repeat(

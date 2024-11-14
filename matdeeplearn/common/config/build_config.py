@@ -94,9 +94,12 @@ def build_config(args, args_override):
         config = yaml.load(ymlfile, Loader=yaml.FullLoader)
 
     # Check for overridden parameters.
-    #if args_override != []:
-    #    overrides = create_dict_from_args(args_override)
-    #    config, _ = merge_dicts(config, overrides)
+    if args_override != []:
+        print(config)
+        overrides = create_dict_from_args(args_override)
+        print(overrides)
+        config["dataset"], _ = merge_dicts(config["dataset"], overrides)
+        print(config)
 
 
     # Some other flags.

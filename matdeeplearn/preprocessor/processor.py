@@ -71,6 +71,9 @@ def from_config(dataset_config):
 
 def process_data(dataset_config):
     processor = from_config(dataset_config)
+    print("Printing dataset")
+    print(dataset_config)
+    print(processor)
     dataset = processor.process()
     
     return dataset
@@ -305,7 +308,7 @@ class DataProcessor:
             
             d["y"] = np.array(_y)
 
-        y = np.array(y)
+        #y = np.array(y)
         return dict_structures
 
     def process(self, save=True):
